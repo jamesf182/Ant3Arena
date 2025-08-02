@@ -20,7 +20,7 @@ namespace Ant_3_Arena
             WindowState = FormWindowState.Maximized;
             BackgroundImage = Resources.bg;
 
-            _antService = antConfigService;            
+            _antService = antConfigService;
 
             Bitmap bitmap = Resources.Ant;
             Size clientSize = ClientSize;

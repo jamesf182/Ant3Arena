@@ -7,17 +7,18 @@ namespace Ant3Arena.Domain.Strategy;
 
 public class MoveStrategy : IMoveStrategy
 {
-    private readonly List<DirectionStrategyDto> _strategies;
+    private readonly List<DirectionStrategyDto> _directionStrategies;
 
-    public MoveStrategy(List<DirectionStrategyDto> strategies)
+    public MoveStrategy(List<DirectionStrategyDto> directionStrategies)
     {
-        _strategies = strategies;
+        _directionStrategies = directionStrategies;
     }
 
     public DirectionEnum Move(ref int x, ref int y, MovementContext context)
     {
-        var current = _strategies.FirstOrDefault(s => s.Direction == context.Direction.ToString());
-        if (current == null) 
+        DirectionStrategyDto? current = _directionStrategies.FirstOrDefault(s => s.Direction == context.Direction.ToString());
+
+        if (current == null)
             return context.Direction;
 
         ApplyMovement(current, ref x, ref y, context);
@@ -40,7 +41,7 @@ public class MoveStrategy : IMoveStrategy
 
     private static DirectionEnum? EvaluateNextDirection(DirectionStrategyDto strategy, int x, int y, Size borders)
     {
-        foreach (var next in strategy.NextDirection)
+        foreach (NextDirectionDto next in strategy.NextDirection)
         {
             if (EvaluateCondition(next.Condition, x, y, borders))
                 return Enum.Parse<DirectionEnum>(next.Direction);

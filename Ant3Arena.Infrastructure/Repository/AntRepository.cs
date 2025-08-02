@@ -1,11 +1,19 @@
 ﻿using Ant3Arena.Domain.DTO;
 using Ant3Arena.Domain.Repository;
+using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
 namespace Ant3Arena.Infrastructure.Repository;
 
 public class AntRepository : IAntRepository
 {
+    private readonly ILogger<AntRepository> _logger;
+
+    public AntRepository(ILogger<AntRepository> logger)
+    {
+        _logger = logger;
+    }
+
     public List<AntDto> GetAnts()
     {
         string basePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -13,19 +21,32 @@ public class AntRepository : IAntRepository
 
         if (!File.Exists(filePath))
         {
-            //throw new FileNotFoundException("Arquivo ants.json não encontrado.", filePath);
-            return [];
-        }            
-
-        string json = File.ReadAllText(filePath);
-        var result = JsonSerializer.Deserialize<List<AntDto>>(json);
-
-        if (result is null)
-        {
-            //throw new InvalidOperationException("Erro ao deserializar o arquivo ants.json.");
+            _logger.LogWarning("File 'ants.json' not found at path: {Path}", filePath);
             return [];
         }
 
-        return result;
+        string json = File.ReadAllText(filePath);
+        if (string.IsNullOrEmpty(json))
+        {
+            _logger.LogWarning("File 'ants.json' is empty.");
+            return [];
+        }
+
+        try
+        {
+            List<AntDto>? result = JsonSerializer.Deserialize<List<AntDto>>(json);
+            if (result is null)
+            {
+                _logger.LogError("Deserialization of 'ants.json' returned null.");
+                return [];
+            }
+
+            return result;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while deserializing 'ants.json'.");
+            return [];
+        }
     }
 }

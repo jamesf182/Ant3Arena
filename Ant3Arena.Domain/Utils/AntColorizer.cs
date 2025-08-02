@@ -6,7 +6,7 @@ public static class AntColorizer
 {
     public static Bitmap ApplyColor(Bitmap original, Color targetColor)
     {
-        Bitmap bmp = new Bitmap(original.Width, original.Height);
+        Bitmap bmp = new(original.Width, original.Height);
 
         for (int y = 0; y < original.Height; y++)
         {

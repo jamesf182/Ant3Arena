@@ -20,11 +20,11 @@ public class Ant
     public Ant(Bitmap baseImage, Size borders, IMoveStrategy moveStrategy,
                int horizontalVelocity, int verticalVelocity, string colorHex)
     {
-        if (horizontalVelocity < 0 || verticalVelocity < 0)
-            throw new ArgumentOutOfRangeException("Velocidades devem ser positivas.");
+        if (horizontalVelocity < 0)
+            horizontalVelocity = 0;
 
-        if (string.IsNullOrWhiteSpace(colorHex))
-            throw new ArgumentException("Cor não pode ser vazia.");
+        if (verticalVelocity < 0)
+            verticalVelocity = 0;
 
         HorizontalVelocity = horizontalVelocity;
         VerticalVelocity = verticalVelocity;
@@ -50,8 +50,18 @@ public class Ant
 
     private static Bitmap GenerateColoredImage(Bitmap baseImage, string colorHex)
     {
-        Color newColor = ColorTranslator.FromHtml(colorHex);
-        return AntColorizer.ApplyColor(baseImage, newColor);
+        Color color;
+
+        try
+        {
+            color = ColorTranslator.FromHtml(colorHex);
+        }
+        catch
+        {
+            color = ColorTranslator.FromHtml("");
+        }
+
+        return AntColorizer.ApplyColor(baseImage, color);
     }
 
     private static (int x, int y) GenerateRandomPosition(Size borders)

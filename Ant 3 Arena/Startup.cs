@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Ant3Arena.Application;
+﻿using Ant3Arena.Application;
 using Ant3Arena.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Ant_3_Arena;
 
@@ -8,13 +9,17 @@ public static class Startup
 {
     public static ServiceProvider ConfigureServices()
     {
-        var services = new ServiceCollection();
+        ServiceCollection services = new ServiceCollection();
 
-        // Adiciona os módulos
+        services.AddLogging(config =>
+        {
+            config.AddDebug();
+            config.SetMinimumLevel(LogLevel.Information);
+        });
+
         services.AddInfrastructure();
-        services.AddApplication(); 
+        services.AddApplication();
 
-        // Adiciona a UI (form principal)
         services.AddScoped<AntArena>();
 
         return services.BuildServiceProvider();

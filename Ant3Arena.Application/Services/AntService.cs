@@ -1,6 +1,7 @@
-﻿using Ant3Arena.Application.Factory;
-using Ant3Arena.Application.Interfaces;
+﻿using Ant3Arena.Application.Interfaces;
+using Ant3Arena.Domain.DTO;
 using Ant3Arena.Domain.Entities;
+using Ant3Arena.Domain.Factories;
 using Ant3Arena.Domain.Repository;
 using System.Drawing;
 
@@ -9,23 +10,25 @@ namespace Ant3Arena.Application.Services;
 public class AntService : IAntService
 {
     private readonly IAntRepository _repository;
+    private readonly IAntFactory _factory;
 
-    public AntService(IAntRepository repository)
+    public AntService(IAntRepository repository, IAntFactory factory)
     {
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+        _factory = factory ?? throw new ArgumentNullException(nameof(factory));
     }
 
     public List<Ant> GetAnts(Bitmap bitmap, Size clientSize)
     {
-        var dtos = _repository.GetAnts();
-        var ants = new List<Ant>();
+        List<AntDto> dtos = _repository.GetAnts();
 
-        foreach (var dto in dtos)
+        List<Ant> ants = [];
+
+        foreach (AntDto dto in dtos)
         {
-            ants.AddRange(AntFactory.CreateAntsFromDto(dto, bitmap, clientSize));
+            ants.AddRange(_factory.CreateAntsFromDto(dto, bitmap, clientSize));
         }
 
         return ants;
     }
 }
-

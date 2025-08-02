@@ -1,21 +1,22 @@
 ﻿using Ant3Arena.Domain.DTO;
 using Ant3Arena.Domain.Entities;
+using Ant3Arena.Domain.Factories;
 using Ant3Arena.Domain.Strategy;
 using System.Drawing;
 
 namespace Ant3Arena.Application.Factory;
 
-public static class AntFactory
+public class AntFactory : IAntFactory
 {
-    public static List<Ant> CreateAntsFromDto(AntDto dto, Bitmap bitmap, Size borders)
+    public IEnumerable<Ant> CreateAntsFromDto(AntDto dto, Bitmap bitmap, Size borders)
     {
-        MoveStrategy strategy = new(dto.Strategies);
+        IMoveStrategy strategy = new MoveStrategy(dto.Strategies);
 
-        var ants = new List<Ant>();
+        List<Ant> ants = [];
 
         for (int i = 0; i < dto.Quantity; i++)
         {
-            var ant = new Ant(bitmap, borders, strategy,
+            Ant ant = new(bitmap, borders, strategy,
                 dto.HorizontalVelocity, dto.VerticalVelocity, dto.Hex);
 
             ants.Add(ant);
