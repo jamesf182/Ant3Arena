@@ -1,6 +1,8 @@
-﻿using Ant3Arena.Application.Interfaces;
-using Ant3Arena.Domain.Enums;
+﻿using Ant3Arena.Application.Factory;
+using Ant3Arena.Application.Interfaces;
+using Ant3Arena.Domain.Entities;
 using Ant3Arena.Domain.Repository;
+using System.Drawing;
 
 namespace Ant3Arena.Application.Services;
 
@@ -13,8 +15,17 @@ public class AntService : IAntService
         _repository = repository ?? throw new ArgumentNullException(nameof(repository));
     }
 
-    public Dictionary<AntColorEnum, int> GetAnts()
+    public List<Ant> GetAnts(Bitmap bitmap, Size clientSize)
     {
-        return _repository.GetAnts();
+        var dtos = _repository.GetAnts();
+        var ants = new List<Ant>();
+
+        foreach (var dto in dtos)
+        {
+            ants.AddRange(AntFactory.CreateAntsFromDto(dto, bitmap, clientSize));
+        }
+
+        return ants;
     }
 }
+

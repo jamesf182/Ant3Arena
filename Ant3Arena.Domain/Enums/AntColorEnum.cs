@@ -2,10 +2,9 @@
 
 public enum AntColorEnum
 {
-    Red,
-    Yellow,
-    Black,
-    White,
-    Purple
+    red,
+    yellow,
+    black,
+    white
 }
 

@@ -5,25 +5,33 @@ using System.Drawing;
 
 namespace Ant3Arena.Domain.Entities;
 
-public abstract class Ant
+public class Ant
 {
+    public string Color { get; private init; }
+    public int HorizontalVelocity { get; private init; }
+    public int VerticalVelocity { get; private init; }    
+    public int Quantity { get; private init; }
+    public string Strategy { get; private init; }
+
     public int X { get; set; }
     public int Y { get; set; }
-    protected DirectionEnum Direction { get; set; }
-    protected abstract int VerticalVelocity { get; init; }
-    protected abstract int HorizontalVelocity { get; init; }
-    protected abstract string Color { get; init; }
+    protected DirectionEnum Direction { get; set; }    
+    
 
     protected Bitmap? antImage;
-    public Bitmap AntImage { get { return antImage; } }
+    public Bitmap AntImage => antImage;
 
     private readonly IMoveStrategy _moveStrategy;
 
-    protected Ant(Bitmap baseImage, Size borders, IMoveStrategy moveStrategy)
+    public Ant(Bitmap baseImage, Size borders, IMoveStrategy moveStrategy,
+               int horizontalVelocity, int verticalVelocity, string colorHex)
     {
         Direction = DirectionEnum.LeftDown;
-        Color newColor = ColorTranslator.FromHtml(Color);
+        HorizontalVelocity = horizontalVelocity;
+        VerticalVelocity = verticalVelocity;
+        Color = colorHex;
 
+        Color newColor = ColorTranslator.FromHtml(Color);
         antImage = AntColorizer.ApplyColor(baseImage, newColor);
 
         Random random = new();
@@ -44,5 +52,5 @@ public abstract class Ant
         X = tempX;
         Y = tempY;
     }
-
 }
+

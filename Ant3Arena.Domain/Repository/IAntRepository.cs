@@ -1,8 +1,8 @@
-﻿using Ant3Arena.Domain.Enums;
+﻿using Ant3Arena.Domain.DTO;
 
 namespace Ant3Arena.Domain.Repository;
 
 public interface IAntRepository
 {
-    Dictionary<AntColorEnum, int> GetAnts();
+    List<AntDto> GetAnts();
 }

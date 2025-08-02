@@ -1,6 +1,34 @@
-{
-  "Red": 3,
-  "Yellow": 2,
-  "Black": 4,
-  "White": 3
-}
+[
+  {
+    "Color": "Red",
+    "Hex": "#FF0000",
+    "HorizontalVelocity": 6,
+    "VerticalVelocity": 6,
+    "Quantity": 3,
+    "Strategy": "Red"
+  },
+  {
+    "Color": "Black",
+    "Hex": "#000000",
+    "HorizontalVelocity": 2,
+    "VerticalVelocity": 6,
+    "Quantity": 3,
+    "Strategy": "Black"
+  },
+  {
+    "Color": "Yellow",
+    "Hex": "#FFFF00",
+    "HorizontalVelocity": 4,
+    "VerticalVelocity": 4,
+    "Quantity": 3,
+    "Strategy": "Yellow"
+  },
+  {
+    "Color": "White",
+    "Hex": "#FFFFFF",
+    "HorizontalVelocity": 2,
+    "VerticalVelocity": 2,
+    "Quantity": 3,
+    "Strategy": "White"
+  }
+]
