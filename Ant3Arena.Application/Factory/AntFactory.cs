@@ -17,12 +17,13 @@ public class AntFactory : IAntFactory
         for (int i = 0; i < dto.Quantity; i++)
         {
             Ant ant = new(bitmap, borders, strategy,
-                dto.HorizontalVelocity, dto.VerticalVelocity, dto.Hex);
+                dto.HorizontalVelocity, dto.VerticalVelocity, dto.Color);
 
             ants.Add(ant);
         }
 
         return ants;
     }
+
 }
 

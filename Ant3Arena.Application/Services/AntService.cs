@@ -20,13 +20,23 @@ public class AntService : IAntService
 
     public List<Ant> GetAnts(Bitmap bitmap, Size clientSize)
     {
-        List<AntDto> dtos = _repository.GetAnts();
+        ArgumentNullException.ThrowIfNull(bitmap);
+
+        if (clientSize.Width <= 0 || clientSize.Height <= 0)
+        {
+            throw new ArgumentException("Client size must have positive dimensions.", nameof(clientSize));
+        }
+
+        List<AntDto> dtos = _repository.GetAnts() ?? [];
 
         List<Ant> ants = [];
 
         foreach (AntDto dto in dtos)
         {
-            ants.AddRange(_factory.CreateAntsFromDto(dto, bitmap, clientSize));
+            IEnumerable<Ant> createdAnts = _factory.CreateAntsFromDto(dto, bitmap, clientSize);
+
+            if (createdAnts != null)
+                ants.AddRange(createdAnts);
         }
 
         return ants;

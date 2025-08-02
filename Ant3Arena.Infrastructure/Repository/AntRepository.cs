@@ -1,5 +1,6 @@
 ﻿using Ant3Arena.Domain.DTO;
 using Ant3Arena.Domain.Repository;
+using Ant3Arena.Infrastructure.FileSystem;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
@@ -8,10 +9,12 @@ namespace Ant3Arena.Infrastructure.Repository;
 public class AntRepository : IAntRepository
 {
     private readonly ILogger<AntRepository> _logger;
+    private readonly IFileReader _fileReader;
 
-    public AntRepository(ILogger<AntRepository> logger)
+    public AntRepository(ILogger<AntRepository> logger, IFileReader fileReader)
     {
         _logger = logger;
+        _fileReader = fileReader;
     }
 
     public List<AntDto> GetAnts()
@@ -19,13 +22,13 @@ public class AntRepository : IAntRepository
         string basePath = AppDomain.CurrentDomain.BaseDirectory;
         string filePath = Path.Combine(basePath, "Data", "ants.json");
 
-        if (!File.Exists(filePath))
+        if (!_fileReader.Exists(filePath))
         {
             _logger.LogWarning("File 'ants.json' not found at path: {Path}", filePath);
             return [];
         }
 
-        string json = File.ReadAllText(filePath);
+        string json = _fileReader.ReadAllText(filePath);
         if (string.IsNullOrEmpty(json))
         {
             _logger.LogWarning("File 'ants.json' is empty.");

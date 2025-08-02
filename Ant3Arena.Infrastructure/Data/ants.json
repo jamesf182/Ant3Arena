@@ -1,7 +1,6 @@
 [
   {
-    "Color": "Red",
-    "Hex": "#FF0000",
+    "Color": "#FF0000",
     "HorizontalVelocity": 6,
     "VerticalVelocity": 6,
     "Quantity": 3,
@@ -85,8 +84,7 @@
     ]
   },
   {
-    "Color": "Black",
-    "Hex": "#000000",
+    "Color": "#000000",
     "HorizontalVelocity": 2,
     "VerticalVelocity": 6,
     "Quantity": 3,
@@ -170,8 +168,7 @@
     ]
   },
   {
-    "Color": "Yellow",
-    "Hex": "#FFFF00",
+    "Color": "#FFFF00",
     "HorizontalVelocity": 4,
     "VerticalVelocity": 4,
     "Quantity": 3,
@@ -255,8 +252,7 @@
     ]
   },
   {
-    "Color": "White",
-    "Hex": "#FFFFFF",
+    "Color": "#FFFFFF",
     "HorizontalVelocity": 2,
     "VerticalVelocity": 2,
     "Quantity": 3,

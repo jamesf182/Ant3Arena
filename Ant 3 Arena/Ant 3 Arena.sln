@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant3Arena.Application", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant3Arena.Infrastructure", "..\Ant3Arena.Infrastructure\Ant3Arena.Infrastructure.csproj", "{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant3Arena.Tests", "..\Ant3Arena.Tests\Ant3Arena.Tests.csproj", "{73BEAC08-B329-4446-9F7B-66A797EDA81E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73BEAC08-B329-4446-9F7B-66A797EDA81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73BEAC08-B329-4446-9F7B-66A797EDA81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73BEAC08-B329-4446-9F7B-66A797EDA81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73BEAC08-B329-4446-9F7B-66A797EDA81E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
