@@ -5,7 +5,84 @@
     "HorizontalVelocity": 6,
     "VerticalVelocity": 6,
     "Quantity": 3,
-    "Strategy": "Red"
+    "Strategies": [
+      {
+        "Direction": "LeftUp",
+        "X": "Decrease",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "y < 0",
+            "Direction": "LeftDown"
+          }
+        ]
+      },
+      {
+        "Direction": "LeftDown",
+        "X": "Decrease",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "LeftUp"
+          }
+        ]
+      },
+      {
+        "Direction": "RightUp",
+        "X": "Increase",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y < 0",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "y < 0",
+            "Direction": "RightDown"
+          }
+        ]
+      },
+      {
+        "Direction": "RightDown",
+        "X": "Increase",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "RightUp"
+          }
+        ]
+      }
+    ]
   },
   {
     "Color": "Black",
@@ -13,15 +90,84 @@
     "HorizontalVelocity": 2,
     "VerticalVelocity": 6,
     "Quantity": 3,
-    "Strategy": "Black"
-  },
-  {
-    "Color": "Yellow",
-    "Hex": "#FFFF00",
-    "HorizontalVelocity": 4,
-    "VerticalVelocity": 4,
-    "Quantity": 3,
-    "Strategy": "Yellow"
+    "Strategies": [
+      {
+        "Direction": "LeftUp",
+        "X": "Decrease",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y < 500",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "y < 500",
+            "Direction": "LeftDown"
+          }
+        ]
+      },
+      {
+        "Direction": "LeftDown",
+        "X": "Decrease",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "LeftUp"
+          }
+        ]
+      },
+      {
+        "Direction": "RightUp",
+        "X": "Increase",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y < 500",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "y < 500",
+            "Direction": "RightDown"
+          }
+        ]
+      },
+      {
+        "Direction": "RightDown",
+        "X": "Increase",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "RightUp"
+          }
+        ]
+      }
+    ]
   },
   {
     "Color": "White",
@@ -29,6 +175,168 @@
     "HorizontalVelocity": 2,
     "VerticalVelocity": 2,
     "Quantity": 3,
-    "Strategy": "White"
+    "Strategies": [
+      {
+        "Direction": "LeftUp",
+        "X": "Decrease",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y < 500",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "y < 500",
+            "Direction": "LeftDown"
+          }
+        ]
+      },
+      {
+        "Direction": "LeftDown",
+        "X": "Decrease",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "LeftUp"
+          }
+        ]
+      },
+      {
+        "Direction": "RightUp",
+        "X": "Increase",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y < 500",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "y < 500",
+            "Direction": "RightDown"
+          }
+        ]
+      },
+      {
+        "Direction": "RightDown",
+        "X": "Increase",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "RightUp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Color": "Yellow",
+    "Hex": "#FFFF00",
+    "HorizontalVelocity": 4,
+    "VerticalVelocity": 4,
+    "Quantity": 3,
+    "Strategies": [
+      {
+        "Direction": "LeftUp",
+        "X": "Decrease",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "y < 0",
+            "Direction": "LeftDown"
+          }
+        ]
+      },
+      {
+        "Direction": "LeftDown",
+        "X": "Decrease",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "LeftUp"
+          }
+        ]
+      },
+      {
+        "Direction": "RightUp",
+        "X": "Increase",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y < 0",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "y < 0",
+            "Direction": "RightDown"
+          }
+        ]
+      },
+      {
+        "Direction": "RightDown",
+        "X": "Increase",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "x > context.Borders.Width",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "y > context.Borders.Height",
+            "Direction": "RightUp"
+          }
+        ]
+      }
+    ]
   }
 ]

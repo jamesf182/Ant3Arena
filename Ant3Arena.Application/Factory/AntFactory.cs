@@ -9,20 +9,15 @@ public static class AntFactory
 {
     public static List<Ant> CreateAntsFromDto(AntDto dto, Bitmap bitmap, Size borders)
     {
-        var ants = new List<Ant>();
+        MoveStrategy strategy = new(dto.Strategies);
 
-        IMoveStrategy strategy = dto.Strategy.ToLower() switch
-        {
-            "red" => new RedAntMoveStrategy(),
-            "black" => new BlackAntMoveStrategy(),
-            "yellow" => new YellowAntMoveStrategy(),
-            "white" => new WhiteAntMoveStrategy(),
-            _ => throw new ArgumentException($"Unknown strategy: {dto.Strategy}")
-        };
+        var ants = new List<Ant>();
 
         for (int i = 0; i < dto.Quantity; i++)
         {
-            var ant = new Ant(bitmap, borders, strategy, dto.HorizontalVelocity, dto.VerticalVelocity, dto.Color);
+            var ant = new Ant(bitmap, borders, strategy,
+                dto.HorizontalVelocity, dto.VerticalVelocity, dto.Hex);
+
             ants.Add(ant);
         }
 

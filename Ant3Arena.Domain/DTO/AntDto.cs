@@ -7,6 +7,6 @@ public class AntDto
     public int HorizontalVelocity { get; set; }
     public int VerticalVelocity { get; set; }
     public int Quantity { get; set; }
-    public string Strategy { get; set; } = "";
+    public List<DirectionStrategyDto> Strategies { get; set; } = [];
 }
 
