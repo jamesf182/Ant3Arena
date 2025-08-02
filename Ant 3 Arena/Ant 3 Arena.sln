@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ant3Arena", "Ant3Arena.csproj", "{C3AFD6E2-5200-4426-A7E3-55AE8B09A6D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant3Arena.Domain", "..\Ant3Arena.Domain\Ant3Arena.Domain.csproj", "{7A706BC8-4DA1-4F07-B383-BD593FCC5FEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant3Arena.Application", "..\Ant3Arena.Application\Ant3Arena.Application.csproj", "{5C2CABFE-42DD-4032-BFF0-EF453E06DFC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ant3Arena.Infrastructure", "..\Ant3Arena.Infrastructure\Ant3Arena.Infrastructure.csproj", "{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3AFD6E2-5200-4426-A7E3-55AE8B09A6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3AFD6E2-5200-4426-A7E3-55AE8B09A6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3AFD6E2-5200-4426-A7E3-55AE8B09A6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3AFD6E2-5200-4426-A7E3-55AE8B09A6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A706BC8-4DA1-4F07-B383-BD593FCC5FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A706BC8-4DA1-4F07-B383-BD593FCC5FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A706BC8-4DA1-4F07-B383-BD593FCC5FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A706BC8-4DA1-4F07-B383-BD593FCC5FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C2CABFE-42DD-4032-BFF0-EF453E06DFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2CABFE-42DD-4032-BFF0-EF453E06DFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2CABFE-42DD-4032-BFF0-EF453E06DFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2CABFE-42DD-4032-BFF0-EF453E06DFC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0343FFD-96AB-4A99-AF1E-B6E4FBC2404F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAA8CCBC-6A57-46CE-B01A-ADDC11FA9C29}
+	EndGlobalSection
+EndGlobal

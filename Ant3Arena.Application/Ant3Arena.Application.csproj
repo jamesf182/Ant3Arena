@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ant3Arena.Domain\Ant3Arena.Domain.csproj" />
+    <ProjectReference Include="..\Ant3Arena.Infrastructure\Ant3Arena.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
