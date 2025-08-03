@@ -16,7 +16,7 @@ public class MoveStrategy : IMoveStrategy
 
     public DirectionEnum Move(ref int x, ref int y, MovementContext context)
     {
-        DirectionStrategyDto? current = _directionStrategies.FirstOrDefault(s => s.Direction == context.Direction.ToString());
+        DirectionStrategyDto? current = _directionStrategies.FirstOrDefault(s => s.Direction == context.Direction);
 
         if (current == null)
             return context.Direction;
@@ -44,7 +44,7 @@ public class MoveStrategy : IMoveStrategy
         foreach (NextDirectionDto next in strategy.NextDirection)
         {
             if (EvaluateCondition(next.Condition, x, y, borders))
-                return Enum.Parse<DirectionEnum>(next.Direction);
+                return next.Direction;
         }
 
         return null;
@@ -69,4 +69,3 @@ public class MoveStrategy : IMoveStrategy
             .Trim();
     }
 }
-
