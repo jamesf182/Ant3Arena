@@ -85,35 +85,6 @@ Infrastructure/ # Repositories, file reading, logging
 - Image coloring  
 - Data loading and validation  
 
-### Run the Tests
-
-```bash
-dotnet test
-```
-
----
-
-## 📦 How to Run
-
-Clone the repository:
-
-```bash
-git clone https://github.com/jamesf182/Ant3Arena.git
-cd ant-simulation
-```
-
-Build the project:
-
-```bash
-dotnet build
-```
-
-Run the simulation (if applicable):
-
-```bash
-dotnet run --project src/AntSimulation
-```
-
 ---
 
 ## 👨‍💻 Author
