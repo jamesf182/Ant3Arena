@@ -40,6 +40,7 @@ Infrastructure/ # Repositories, file reading, logging
 [
   {
     "Color": "#FFFFFF",
+    "Direction": "LeftDown",
     "HorizontalVelocity": 2,
     "VerticalVelocity": 2,
     "Quantity": 3,
@@ -60,6 +61,63 @@ Infrastructure/ # Repositories, file reading, logging
           {
             "Condition": "y < 500",
             "Direction": "LeftDown"
+          }
+        ]
+      },
+      {
+        "Direction": "LeftDown",
+        "X": "Decrease",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x < 0 AND y > Height",
+            "Direction": "RightUp"
+          },
+          {
+            "Condition": "x < 0",
+            "Direction": "RightDown"
+          },
+          {
+            "Condition": "y > Height",
+            "Direction": "LeftUp"
+          }
+        ]
+      },
+      {
+        "Direction": "RightUp",
+        "X": "Increase",
+        "Y": "Decrease",
+        "NextDirection": [
+          {
+            "Condition": "x > Width AND y < 500",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "x > Width",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "y < 500",
+            "Direction": "RightDown"
+          }
+        ]
+      },
+      {
+        "Direction": "RightDown",
+        "X": "Increase",
+        "Y": "Increase",
+        "NextDirection": [
+          {
+            "Condition": "x > Width AND y > Height",
+            "Direction": "LeftUp"
+          },
+          {
+            "Condition": "x > Width",
+            "Direction": "LeftDown"
+          },
+          {
+            "Condition": "y > Height",
+            "Direction": "RightUp"
           }
         ]
       }
