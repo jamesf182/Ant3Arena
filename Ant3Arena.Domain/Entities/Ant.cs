@@ -18,7 +18,7 @@ public class Ant
     private readonly IMoveStrategy _moveStrategy;
 
     public Ant(Bitmap baseImage, Size borders, IMoveStrategy moveStrategy,
-               int horizontalVelocity, int verticalVelocity, string color)
+               int horizontalVelocity, int verticalVelocity, string color, DirectionEnum direction)
     {
         if (horizontalVelocity < 0)
             horizontalVelocity = 0;
@@ -29,9 +29,9 @@ public class Ant
         HorizontalVelocity = horizontalVelocity;
         VerticalVelocity = verticalVelocity;
         Color = color;
+        Direction = direction;
         _moveStrategy = moveStrategy ?? throw new ArgumentNullException(nameof(moveStrategy));
 
-        Direction = DirectionEnum.LeftDown;
         AntImage = GenerateColoredImage(baseImage, color);
         (X, Y) = GenerateRandomPosition(borders);
     }

@@ -17,7 +17,7 @@ public class AntFactory : IAntFactory
         for (int i = 0; i < dto.Quantity; i++)
         {
             Ant ant = new(bitmap, borders, strategy,
-                dto.HorizontalVelocity, dto.VerticalVelocity, dto.Color);
+                dto.HorizontalVelocity, dto.VerticalVelocity, dto.Color, dto.Direction);
 
             ants.Add(ant);
         }
