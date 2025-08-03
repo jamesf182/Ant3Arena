@@ -1,6 +1,7 @@
 ﻿using Ant3Arena.Domain.DTO;
 using Ant3Arena.Domain.Repository;
 using Ant3Arena.Infrastructure.FileSystem;
+using Ant3Arena.Infrastructure.LogsMessages;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
@@ -24,14 +25,14 @@ public class AntRepository : IAntRepository
 
         if (!_fileReader.Exists(filePath))
         {
-            _logger.LogWarning("File 'ants.json' not found at path: {Path}", filePath);
+            _logger.LogWarning(AntLogMessages.FileNotFound, filePath);
             return [];
         }
 
         string json = _fileReader.ReadAllText(filePath);
         if (string.IsNullOrEmpty(json))
         {
-            _logger.LogWarning("File 'ants.json' is empty.");
+            _logger.LogWarning(AntLogMessages.FileEmpty);
             return [];
         }
 
@@ -40,7 +41,7 @@ public class AntRepository : IAntRepository
             List<AntDto>? result = JsonSerializer.Deserialize<List<AntDto>>(json);
             if (result is null)
             {
-                _logger.LogError("Deserialization of 'ants.json' returned null.");
+                _logger.LogError(AntLogMessages.DeserializationNull);
                 return [];
             }
 
@@ -48,7 +49,7 @@ public class AntRepository : IAntRepository
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while deserializing 'ants.json'.");
+            _logger.LogError(ex, AntLogMessages.DeserializationError);
             return [];
         }
     }
