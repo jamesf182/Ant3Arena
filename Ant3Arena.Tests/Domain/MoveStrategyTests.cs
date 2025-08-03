@@ -97,7 +97,11 @@ public class MoveStrategyTests
                 X = AxisOperation.Decrease,
                 Y = AxisOperation.Increase,
                 NextDirection = [
-                    new NextDirectionDto { Condition = "y > context.Borders.Height", Direction = DirectionEnum.LeftUp }
+                    new NextDirectionDto 
+                    { 
+                        Condition = "y > Height", 
+                        Direction = DirectionEnum.LeftUp 
+                    }
                 ]
             }
         ];

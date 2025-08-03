@@ -1,6 +1,7 @@
 ﻿using Ant3Arena.Application.Services;
 using Ant3Arena.Domain.DTO;
 using Ant3Arena.Domain.Entities;
+using Ant3Arena.Domain.Enums;
 using Ant3Arena.Domain.Factories;
 using Ant3Arena.Domain.Repository;
 using Ant3Arena.Domain.Strategy;
@@ -26,8 +27,8 @@ public class AntServiceTests
         List<AntDto> dtos = [dto];
 
         List<Ant> expectedAnts = [
-            new Ant(bitmap, clientSize, strategy, 2, 2, "#FF0000"),
-            new Ant(bitmap, clientSize, strategy, 6, 4, "#FFFF00"),
+            new Ant(bitmap, clientSize, strategy, 2, 2, "#FF0000", DirectionEnum.LeftDown),
+            new Ant(bitmap, clientSize, strategy, 6, 4, "#FFFF00", DirectionEnum.LeftDown),
         ];
 
         repository.GetAnts()
@@ -77,7 +78,7 @@ public class AntServiceTests
 
         var service = new AntService(repository, factory);
 
-        Bitmap bitmap = new Bitmap(10, 10);
+        Bitmap bitmap = new(10, 10);
         var clientSize = new Size(width, height);
 
         // Act & Assert
@@ -96,7 +97,7 @@ public class AntServiceTests
         repository.GetAnts()
             .Returns((List<AntDto>?)null);
 
-        Bitmap bitmap = new Bitmap(10, 10);
+        Bitmap bitmap = new(10, 10);
         var clientSize = new Size(100, 100);
 
         // Act

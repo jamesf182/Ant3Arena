@@ -17,7 +17,7 @@ public class AntTests
         IMoveStrategy moveStrategy = Substitute.For<IMoveStrategy>();
 
         // Act
-        Ant ant = new(baseImage, borders, moveStrategy, 2, 3, "#FF0000");
+        Ant ant = new(baseImage, borders, moveStrategy, 2, 3, "#FF0000", DirectionEnum.LeftDown);
 
         // Assert
         Assert.Equal(2, ant.HorizontalVelocity);
@@ -38,7 +38,7 @@ public class AntTests
         IMoveStrategy moveStrategy = Substitute.For<IMoveStrategy>();
 
         // Act
-        Ant ant = new(baseImage, borders, moveStrategy, -5, -10, "#00FF00");
+        Ant ant = new(baseImage, borders, moveStrategy, -5, -10, "#00FF00", DirectionEnum.LeftDown);
 
         // Assert
         Assert.Equal(0, ant.HorizontalVelocity);
@@ -61,7 +61,7 @@ public class AntTests
                         return DirectionEnum.RightDown;
                     });
 
-        Ant ant = new(baseImage, borders, moveStrategy, 2, 2, "#0000FF");
+        Ant ant = new(baseImage, borders, moveStrategy, 2, 2, "#0000FF", DirectionEnum.LeftDown);
 
         int originalX = ant.X;
         int originalY = ant.Y;
@@ -84,7 +84,7 @@ public class AntTests
 
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() =>
-            new Ant(baseImage, borders, null!, 1, 1, "#FFFFFF"));
+            new Ant(baseImage, borders, null!, 1, 1, "#FFFFFF", DirectionEnum.LeftDown));
     }
 
     [Fact]
@@ -96,7 +96,7 @@ public class AntTests
         IMoveStrategy moveStrategy = Substitute.For<IMoveStrategy>();
 
         // Act
-        Ant ant = new(baseImage, borders, moveStrategy, 1, 1, "invalid-color");
+        Ant ant = new(baseImage, borders, moveStrategy, 1, 1, "invalid-color", DirectionEnum.LeftDown);
 
         // Assert
         Assert.NotNull(ant.AntImage);
