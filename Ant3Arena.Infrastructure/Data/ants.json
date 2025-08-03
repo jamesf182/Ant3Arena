@@ -31,7 +31,7 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Condition": "x < 0 AND y > Height",
             "Direction": "RightUp"
           },
           {
@@ -39,7 +39,7 @@
             "Direction": "RightDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "LeftUp"
           }
         ]
@@ -50,11 +50,11 @@
         "Y": "Decrease",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y < 0",
+            "Condition": "x > Width AND y < 0",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftUp"
           },
           {
@@ -69,15 +69,15 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Condition": "x > Width AND y > Height",
             "Direction": "LeftUp"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "RightUp"
           }
         ]
@@ -116,7 +116,7 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Condition": "x < 0 AND y > Height",
             "Direction": "RightUp"
           },
           {
@@ -124,7 +124,7 @@
             "Direction": "RightDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "LeftUp"
           }
         ]
@@ -135,11 +135,11 @@
         "Y": "Decrease",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y < 500",
+            "Condition": "x > Width AND y < 500",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftUp"
           },
           {
@@ -154,15 +154,15 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Condition": "x > Width AND y > Height",
             "Direction": "LeftUp"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "RightUp"
           }
         ]
@@ -201,7 +201,7 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Condition": "x < 0 AND y > Height",
             "Direction": "RightUp"
           },
           {
@@ -209,7 +209,7 @@
             "Direction": "RightDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "LeftUp"
           }
         ]
@@ -220,11 +220,11 @@
         "Y": "Decrease",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y < 0",
+            "Condition": "x > Width AND y < 0",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftUp"
           },
           {
@@ -239,15 +239,15 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Condition": "x > Width AND y > Height",
             "Direction": "LeftUp"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "RightUp"
           }
         ]
@@ -286,7 +286,7 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x < 0 AND y > context.Borders.Height",
+            "Condition": "x < 0 AND y > Height",
             "Direction": "RightUp"
           },
           {
@@ -294,7 +294,7 @@
             "Direction": "RightDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "LeftUp"
           }
         ]
@@ -305,11 +305,11 @@
         "Y": "Decrease",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y < 500",
+            "Condition": "x > Width AND y < 500",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftUp"
           },
           {
@@ -324,15 +324,15 @@
         "Y": "Increase",
         "NextDirection": [
           {
-            "Condition": "x > context.Borders.Width AND y > context.Borders.Height",
+            "Condition": "x > Width AND y > Height",
             "Direction": "LeftUp"
           },
           {
-            "Condition": "x > context.Borders.Width",
+            "Condition": "x > Width",
             "Direction": "LeftDown"
           },
           {
-            "Condition": "y > context.Borders.Height",
+            "Condition": "y > Height",
             "Direction": "RightUp"
           }
         ]

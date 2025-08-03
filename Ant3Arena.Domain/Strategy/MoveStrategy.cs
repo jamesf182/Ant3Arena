@@ -62,8 +62,8 @@ public class MoveStrategy : IMoveStrategy
     private static string ResolveConditionVariables(string condition, Size borders)
     {
         return condition
-            .Replace("context.Borders.Height", borders.Height.ToString())
-            .Replace("context.Borders.Width", borders.Width.ToString())
+            .Replace("Height", borders.Height.ToString())
+            .Replace("Width", borders.Width.ToString())
             .Replace("&&", "AND")
             .Replace("||", "OR")
             .Trim();

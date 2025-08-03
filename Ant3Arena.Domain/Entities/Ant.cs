@@ -69,6 +69,7 @@ public class Ant
         Random random = new();
         int x = random.Next(0, borders.Width);
         int y = random.Next(0, borders.Height);
+
         return (x, y);
     }
 }
